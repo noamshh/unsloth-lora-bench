@@ -1,0 +1,174 @@
+{
+  "64": {
+    "config": {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "max_seq_len": 64,
+      "iterations": 100,
+      "batch_size": 32,
+      "lora_r": 32
+    },
+    "results": {
+      "vanilla_lora": {
+        "total_time_ms": 41395.16,
+        "time_per_iter_ms": 459.95,
+        "forward_time_ms": 144.87,
+        "backward_time_ms": 315.08,
+        "total_stddev_ms": 15.07,
+        "forward_stddev_ms": 4.74,
+        "backward_stddev_ms": 10.34
+      },
+      "fused_kernel": {
+        "total_time_ms": 29691.24,
+        "time_per_iter_ms": 329.9,
+        "forward_time_ms": 103.5,
+        "backward_time_ms": 226.4,
+        "total_stddev_ms": 10.16,
+        "forward_stddev_ms": 3.34,
+        "backward_stddev_ms": 6.83
+      },
+      "full_unsloth": {
+        "total_time_ms": 30922.94,
+        "time_per_iter_ms": 343.59,
+        "forward_time_ms": 108.59,
+        "backward_time_ms": 235.0,
+        "total_stddev_ms": 45.42,
+        "forward_stddev_ms": 44.53,
+        "backward_stddev_ms": 13.88
+      }
+    },
+    "speedup": {
+      "fused_vs_vanilla": 1.39,
+      "full_vs_fused": 0.96,
+      "full_vs_vanilla": 1.34
+    }
+  },
+  "128": {
+    "config": {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "max_seq_len": 128,
+      "iterations": 100,
+      "batch_size": 32,
+      "lora_r": 32
+    },
+    "results": {
+      "vanilla_lora": {
+        "total_time_ms": 79434.93,
+        "time_per_iter_ms": 882.61,
+        "forward_time_ms": 281.01,
+        "backward_time_ms": 601.6,
+        "total_stddev_ms": 23.88,
+        "forward_stddev_ms": 7.65,
+        "backward_stddev_ms": 16.29
+      },
+      "fused_kernel": {
+        "total_time_ms": 56162.83,
+        "time_per_iter_ms": 624.03,
+        "forward_time_ms": 198.41,
+        "backward_time_ms": 425.62,
+        "total_stddev_ms": 15.1,
+        "forward_stddev_ms": 5.19,
+        "backward_stddev_ms": 10.01
+      },
+      "full_unsloth": {
+        "total_time_ms": 52443.07,
+        "time_per_iter_ms": 582.7,
+        "forward_time_ms": 175.88,
+        "backward_time_ms": 406.82,
+        "total_stddev_ms": 19.95,
+        "forward_stddev_ms": 3.74,
+        "backward_stddev_ms": 18.03
+      }
+    },
+    "speedup": {
+      "fused_vs_vanilla": 1.41,
+      "full_vs_fused": 1.07,
+      "full_vs_vanilla": 1.51
+    }
+  },
+  "256": {
+    "config": {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "max_seq_len": 256,
+      "iterations": 100,
+      "batch_size": 32,
+      "lora_r": 32
+    },
+    "results": {
+      "vanilla_lora": {
+        "total_time_ms": 156167.66,
+        "time_per_iter_ms": 1735.2,
+        "forward_time_ms": 540.43,
+        "backward_time_ms": 1194.76,
+        "total_stddev_ms": 49.27,
+        "forward_stddev_ms": 15.2,
+        "backward_stddev_ms": 34.12
+      },
+      "fused_kernel": {
+        "total_time_ms": 109981.3,
+        "time_per_iter_ms": 1222.01,
+        "forward_time_ms": 378.3,
+        "backward_time_ms": 843.72,
+        "total_stddev_ms": 34.16,
+        "forward_stddev_ms": 10.46,
+        "backward_stddev_ms": 23.78
+      },
+      "full_unsloth": {
+        "total_time_ms": 91766.16,
+        "time_per_iter_ms": 1019.62,
+        "forward_time_ms": 317.93,
+        "backward_time_ms": 701.69,
+        "total_stddev_ms": 23.51,
+        "forward_stddev_ms": 7.02,
+        "backward_stddev_ms": 16.52
+      }
+    },
+    "speedup": {
+      "fused_vs_vanilla": 1.42,
+      "full_vs_fused": 1.2,
+      "full_vs_vanilla": 1.7
+    }
+  },
+  "512": {
+    "config": {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "max_seq_len": 512,
+      "iterations": 100,
+      "batch_size": 32,
+      "lora_r": 32
+    },
+    "results": {
+      "vanilla_lora": {
+        "total_time_ms": 307701.94,
+        "time_per_iter_ms": 3418.91,
+        "forward_time_ms": 1061.56,
+        "backward_time_ms": 2357.35,
+        "total_stddev_ms": 107.99,
+        "forward_stddev_ms": 34.05,
+        "backward_stddev_ms": 73.95
+      },
+      "fused_kernel": {
+        "total_time_ms": 219398.48,
+        "time_per_iter_ms": 2437.76,
+        "forward_time_ms": 748.16,
+        "backward_time_ms": 1689.6,
+        "total_stddev_ms": 76.01,
+        "forward_stddev_ms": 23.8,
+        "backward_stddev_ms": 52.22
+      },
+      "full_unsloth": {
+        "total_time_ms": 176437.81,
+        "time_per_iter_ms": 1960.42,
+        "forward_time_ms": 617.09,
+        "backward_time_ms": 1343.33,
+        "total_stddev_ms": 62.91,
+        "forward_stddev_ms": 19.62,
+        "backward_stddev_ms": 43.33
+      }
+    },
+    "speedup": {
+      "fused_vs_vanilla": 1.4,
+      "full_vs_fused": 1.24,
+      "full_vs_vanilla": 1.74
+    }
+  }
+}

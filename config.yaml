@@ -1,0 +1,27 @@
+experiments:
+  seq_lens: [64, 128, 256, 512]
+
+model:
+  name: "Qwen/Qwen2.5-3B-Instruct"
+  max_seq_len: 512   # will be overwritten
+  dtype: "float16"
+
+lora:
+  r: 32
+  alpha: 64
+  dropout: 0.0
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+training:
+  iterations: 100
+  batch_size: 32
+  learning_rate: 2e-4
+  warmup_steps: 10
+  seed: 1
+  dataset_path: "sft_train.jsonl"
+
+benchmark:
+  results_file: "results.json"
+
+
+
