@@ -8,7 +8,7 @@ I created three variants of the same model and compared their training performan
 
 **Vanilla PEFT** uses standard HuggingFace PEFT LoRA with gradient checkpointing.
 
-**Fused MLP** takes vanilla PEFT and replaces just the MLP forward passes with Unsloth's fused Triton kernels.
+**Fused MLP** takes vanilla PEFT and replaces just the MLP forward passes with Unsloth's fused triton kernels.
 
 **Full Unsloth** uses Unsloth's FastLanguageModel, which applies all their optimizations: fused MLP, RoPE, RMS LayerNorm, and smart gradient checkpointing.
 
