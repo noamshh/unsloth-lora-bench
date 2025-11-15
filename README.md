@@ -102,7 +102,7 @@ So where does the speedup comes from?
 
 Here is what Unsloth adds on top of the fused MLP:
 
-**Fast RoPE** uses a custom triton kernel (`fast_rope_embedding`) to compute rotary position embeddings in a single pass. RoPE is applied to every token at every layer, so this scales linearly with sequence length.
+**Fast RoPE** uses a custom triton kernel (`fast_rope_embedding`) to compute rotary position embeddings for query and key vectors. This runs on all tokens in each layer's attention block, so it scales linearly with sequence length.
 
 **Fast RMS LayerNorm** replaces PyTorch's normalization with a triton kernel (`_rms_layernorm_forward`) that fuses the variance calculation, rsqrt, normalization, and weight multiplication into one operation. This also runs on every token, so it scales with sequence length.
 
