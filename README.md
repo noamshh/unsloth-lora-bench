@@ -14,6 +14,7 @@ I created three variants of the same model and compared their training performan
 
 I ran this on an A100 80GB using Qwen2.5-3B-Instruct (which uses SwiGLU activation in its MLP blocks). The config was LoRA rank 32, batch size 32, and I tested four sequence lengths: 64, 128, 256, and 512. Each experiment ran for 100 iterations.
 
+The training data (`sft_train.jsonl`) is from my [integralreason](https://github.com/noamshh/integralreason) repo. Also note that the fused kernel requires `lora_dropout=0` and `bias="none"`.
 ## Results
 
 ![Benchmark Results](benchmark_results.png)
