@@ -31,7 +31,7 @@ To understand the optimization, I traced through the actual code that executes d
 
 ### PEFT LoRA
 
-In vanilla PEFT (from `peft/tuners/lora/layer.py:757-771`), each LoRA-adapted linear layer does this:
+In vanilla PEFT (from `peft/tuners/lora/layer.py::Linear.forward`), each LoRA-adapted linear layer does this:
 
 ```python
 result = base_layer(x)                      # X @ W
